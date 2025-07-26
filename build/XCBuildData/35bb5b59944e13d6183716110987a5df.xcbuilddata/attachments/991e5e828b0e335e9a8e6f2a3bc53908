@@ -1,0 +1,80 @@
+{
+  "" : {
+    "const-values" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/dafoma_10-master.swiftconstvalues",
+    "dependencies" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/dafoma_10-master.d",
+    "diagnostics" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/dafoma_10-master.dia",
+    "emit-module-dependencies" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/dafoma_10-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/dafoma_10-master-emit-module.dia",
+    "swift-dependencies" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/dafoma_10-master.swiftdeps"
+  },
+  "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "index-unit-output-path" : "/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/GeneratedAssetSymbols.o"
+  },
+  "/Users/slava/Desktop/dafoma_10/dafoma_10/ColorHarmonyApp.swift" : {
+    "index-unit-output-path" : "/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/ColorHarmonyApp.o",
+    "llvm-bc" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/ColorHarmonyApp.bc",
+    "object" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/ColorHarmonyApp.o"
+  },
+  "/Users/slava/Desktop/dafoma_10/dafoma_10/ContentView.swift" : {
+    "index-unit-output-path" : "/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/ContentView.o"
+  },
+  "/Users/slava/Desktop/dafoma_10/dafoma_10/Models/ColorTheme.swift" : {
+    "index-unit-output-path" : "/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/ColorTheme.o",
+    "llvm-bc" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/ColorTheme.bc",
+    "object" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/ColorTheme.o"
+  },
+  "/Users/slava/Desktop/dafoma_10/dafoma_10/Models/Task.swift" : {
+    "index-unit-output-path" : "/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/Task.o",
+    "llvm-bc" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/Task.bc",
+    "object" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/Task.o"
+  },
+  "/Users/slava/Desktop/dafoma_10/dafoma_10/UIComponents/ColorBlock.swift" : {
+    "index-unit-output-path" : "/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/ColorBlock.o",
+    "llvm-bc" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/ColorBlock.bc",
+    "object" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/ColorBlock.o"
+  },
+  "/Users/slava/Desktop/dafoma_10/dafoma_10/UIComponents/CustomButton.swift" : {
+    "index-unit-output-path" : "/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/CustomButton.o",
+    "llvm-bc" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/CustomButton.bc",
+    "object" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/CustomButton.o"
+  },
+  "/Users/slava/Desktop/dafoma_10/dafoma_10/ViewModels/TaskManager.swift" : {
+    "index-unit-output-path" : "/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/TaskManager.o",
+    "llvm-bc" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/TaskManager.bc",
+    "object" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/TaskManager.o"
+  },
+  "/Users/slava/Desktop/dafoma_10/dafoma_10/ViewModels/ThemeManager.swift" : {
+    "index-unit-output-path" : "/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/ThemeManager.o",
+    "llvm-bc" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/ThemeManager.bc",
+    "object" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/ThemeManager.o"
+  },
+  "/Users/slava/Desktop/dafoma_10/dafoma_10/Views/AddTaskView.swift" : {
+    "index-unit-output-path" : "/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/AddTaskView.o",
+    "llvm-bc" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/AddTaskView.bc",
+    "object" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/AddTaskView.o"
+  },
+  "/Users/slava/Desktop/dafoma_10/dafoma_10/Views/DashboardComponents.swift" : {
+    "index-unit-output-path" : "/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/DashboardComponents.o",
+    "llvm-bc" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/DashboardComponents.bc",
+    "object" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/DashboardComponents.o"
+  },
+  "/Users/slava/Desktop/dafoma_10/dafoma_10/Views/OnboardingView.swift" : {
+    "index-unit-output-path" : "/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/OnboardingView.o",
+    "llvm-bc" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/OnboardingView.bc",
+    "object" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/OnboardingView.o"
+  },
+  "/Users/slava/Desktop/dafoma_10/dafoma_10/Views/TaskComponents.swift" : {
+    "index-unit-output-path" : "/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/TaskComponents.o",
+    "llvm-bc" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/TaskComponents.bc",
+    "object" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/TaskComponents.o"
+  },
+  "/Users/slava/Desktop/dafoma_10/dafoma_10/Views/ThemeSelectorView.swift" : {
+    "index-unit-output-path" : "/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/ThemeSelectorView.o",
+    "llvm-bc" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/ThemeSelectorView.bc",
+    "object" : "/Users/slava/Desktop/dafoma_10/build/dafoma_10.build/Release-iphoneos/dafoma_10.build/Objects-normal/arm64/ThemeSelectorView.o"
+  }
+}
