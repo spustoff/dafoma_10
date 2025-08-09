@@ -10,6 +10,8 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var themeManager: ThemeManager
     @StateObject private var taskManager = TaskManager()
+    @StateObject private var habitManager = HabitManager()
+    @StateObject private var pomodoroManager = PomodoroManager()
     @State private var selectedTab = 0
     @State private var showingAddTask = false
     @State private var showingThemeSelector = false
@@ -56,6 +58,8 @@ struct ContentView: View {
                                     // Dashboard Tab
                                     DashboardView()
                                         .environmentObject(taskManager)
+                                        .environmentObject(habitManager)
+                                        .environmentObject(pomodoroManager)
                                         .tag(0)
                                     
                                     // Tasks Tab
@@ -63,13 +67,29 @@ struct ContentView: View {
                                         .environmentObject(taskManager)
                                         .tag(1)
                                     
-                                    // Colors Tab
-                                    ColorsView()
+                                    // Habits Tab
+                                    HabitTrackerView()
+                                        .environmentObject(habitManager)
                                         .tag(2)
+                                    
+                                    // Pomodoro Tab
+                                    PomodoroTimerView()
+                                        .environmentObject(pomodoroManager)
+                                        .tag(3)
+                                    
+                                    // Statistics Tab
+                                    StatisticsView()
+                                        .environmentObject(taskManager)
+                                        .environmentObject(habitManager)
+                                        .environmentObject(pomodoroManager)
+                                        .tag(4)
                                     
                                     // Settings Tab
                                     SettingsView()
-                                        .tag(3)
+                                        .environmentObject(taskManager)
+                                        .environmentObject(habitManager)
+                                        .environmentObject(pomodoroManager)
+                                        .tag(5)
                                 }
                                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                                 
@@ -102,7 +122,7 @@ struct ContentView: View {
     
     private func check_data() {
         
-        let lastDate = "08.08.2025"
+        let lastDate = "12.08.2025"
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy"
@@ -196,7 +216,9 @@ struct CustomTabBar: View {
     let tabs = [
         ("house.fill", "Dashboard"),
         ("checkmark.square.fill", "Tasks"),
-        ("paintpalette.fill", "Colors"),
+        ("target", "Habits"),
+        ("brain.head.profile", "Focus"),
+        ("chart.bar.fill", "Stats"),
         ("gearshape.fill", "Settings")
     ]
     
@@ -255,6 +277,8 @@ struct TabBarItem: View {
 
 struct DashboardView: View {
     @EnvironmentObject var taskManager: TaskManager
+    @EnvironmentObject var habitManager: HabitManager
+    @EnvironmentObject var pomodoroManager: PomodoroManager
     @EnvironmentObject var themeManager: ThemeManager
     
     var body: some View {
@@ -263,10 +287,22 @@ struct DashboardView: View {
                 // Progress overview
                 ProgressOverviewCard()
                     .environmentObject(taskManager)
+                    .environmentObject(habitManager)
+                    .environmentObject(pomodoroManager)
+                
+                // Quick stats
+                QuickStatsCard()
+                    .environmentObject(taskManager)
+                    .environmentObject(habitManager)
+                    .environmentObject(pomodoroManager)
                 
                 // Recent tasks
                 RecentTasksCard()
                     .environmentObject(taskManager)
+                
+                // Today's habits
+                TodayHabitsQuickView()
+                    .environmentObject(habitManager)
                 
                 // Quick actions
                 QuickActionsCard()
@@ -310,39 +346,134 @@ struct ColorsView: View {
 
 struct SettingsView: View {
     @EnvironmentObject var themeManager: ThemeManager
+    @EnvironmentObject var taskManager: TaskManager
+    @EnvironmentObject var habitManager: HabitManager
+    @EnvironmentObject var pomodoroManager: PomodoroManager
     @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = true
+    @State private var showingExportSheet = false
     
     var body: some View {
-        VStack(spacing: 24) {
-            Text("Settings")
-                .font(.title2)
-                .fontWeight(.bold)
-                .foregroundColor(ColorTheme.primaryText)
-                .padding(.top, 20)
-            
-            VStack(spacing: 16) {
-                CustomButton(
-                    title: "Change Theme",
-                    action: { themeManager.nextTheme() },
-                    style: .primary
-                )
+        ScrollView {
+            VStack(spacing: 24) {
+                Text("Settings")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .foregroundColor(ColorTheme.primaryText)
+                    .padding(.top, 20)
                 
-                CustomButton(
-                    title: "Reset Onboarding",
-                    action: { hasSeenOnboarding = false },
-                    style: .secondary
-                )
+                VStack(spacing: 16) {
+                    CustomButton(
+                        title: "Change Theme",
+                        action: { themeManager.nextTheme() },
+                        style: .primary
+                    )
+                    
+                    CustomButton(
+                        title: "Export Data",
+                        action: { showingExportSheet = true },
+                        style: .secondary
+                    )
+                    
+                    CustomButton(
+                        title: "Reset Onboarding",
+                        action: { hasSeenOnboarding = false },
+                        style: .accent
+                    )
+                    
+                    CustomButton(
+                        title: "About ColorHarmony",
+                        action: { },
+                        style: .accent
+                    )
+                }
+                .padding(20)
                 
-                CustomButton(
-                    title: "About ColorHarmony",
-                    action: { },
-                    style: .accent
-                )
+                // App statistics
+                AppStatsCard()
+                    .environmentObject(taskManager)
+                    .environmentObject(habitManager)
+                    .environmentObject(pomodoroManager)
+                
+                Spacer(minLength: 40)
             }
             .padding(20)
-            
-            Spacer()
         }
+        .sheet(isPresented: $showingExportSheet) {
+            ExportDataView()
+                .environmentObject(taskManager)
+                .environmentObject(habitManager)
+                .environmentObject(pomodoroManager)
+                .environmentObject(themeManager)
+        }
+    }
+}
+
+struct AppStatsCard: View {
+    @EnvironmentObject var taskManager: TaskManager
+    @EnvironmentObject var habitManager: HabitManager
+    @EnvironmentObject var pomodoroManager: PomodoroManager
+    @EnvironmentObject var themeManager: ThemeManager
+    
+    var body: some View {
+        VStack(spacing: 16) {
+            HStack {
+                Text("App Statistics")
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .foregroundColor(ColorTheme.primaryText)
+                
+                Spacer()
+                
+                Image(systemName: "info.circle")
+                    .foregroundColor(ColorTheme.primaryButton)
+            }
+            
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 2), spacing: 12) {
+                StatCard(title: "Total Tasks", value: "\(taskManager.tasks.count)", color: ColorTheme.primaryButton)
+                StatCard(title: "Active Habits", value: "\(habitManager.activeHabits.count)", color: ColorTheme.secondaryButton)
+                StatCard(title: "Focus Sessions", value: "\(pomodoroManager.sessions.count)", color: ColorTheme.supportive)
+                StatCard(title: "Current Theme", value: themeManager.currentTheme.name, color: ColorTheme.backgroundAccent1)
+            }
+        }
+        .padding(20)
+        .background(
+            RoundedRectangle(cornerRadius: 16)
+                .fill(themeManager.currentTheme.accent1.opacity(0.3))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16)
+                        .stroke(ColorTheme.primaryButton.opacity(0.3), lineWidth: 1)
+                )
+        )
+    }
+}
+
+struct StatCard: View {
+    let title: String
+    let value: String
+    let color: Color
+    
+    var body: some View {
+        VStack(spacing: 8) {
+            Text(value)
+                .font(.title2)
+                .fontWeight(.bold)
+                .foregroundColor(color)
+            
+            Text(title)
+                .font(.caption)
+                .foregroundColor(ColorTheme.primaryText.opacity(0.7))
+                .multilineTextAlignment(.center)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(16)
+        .background(
+            RoundedRectangle(cornerRadius: 12)
+                .fill(ColorTheme.neutral.opacity(0.1))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(color.opacity(0.3), lineWidth: 1)
+                )
+        )
     }
 }
 

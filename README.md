@@ -1,6 +1,6 @@
 # ColorHarmony: Blink 🎨
 
-A beautiful iOS productivity app built with SwiftUI that combines task management with stunning color themes. Designed for iOS 15.6+ and crafted to enhance productivity through visual harmony.
+A beautiful iOS productivity app built with SwiftUI that combines task management, habit tracking, focus sessions, and advanced analytics with stunning color themes. Designed for iOS 15.6+ and crafted to enhance productivity through visual harmony.
 
 ## ✨ Features
 
@@ -11,20 +11,47 @@ A beautiful iOS productivity app built with SwiftUI that combines task managemen
 - Real-time theme switching with smooth animations
 - Color-coded task organization
 
-### 📋 Task Management
+### 📋 Advanced Task Management
 - Create, edit, and organize tasks with beautiful interfaces
 - Priority levels (Low, Medium, High) with color indicators
 - Due date scheduling with smart formatting
 - Task completion tracking with progress visualization
 - Expandable task descriptions
 - Filter tasks by status and priority
+- Task linking with Pomodoro sessions
 
-### 🚀 Productivity Features
-- **Dashboard**: Progress overview with completion rates
-- **Visual Analytics**: Circular progress indicators and statistics
-- **Quick Actions**: Fast access to common functions
-- **Smart Filtering**: View tasks by status and priority
-- **Persistent Storage**: Tasks saved locally using UserDefaults
+### 🎯 Habit Tracking System
+- **Visual Habit Tracker**: Track daily habits with beautiful calendar views
+- **Streak Counting**: Monitor consecutive days and build consistency
+- **Progress Visualization**: Weekly and monthly heat maps
+- **Customizable Icons**: Choose from 12 beautiful SF Symbols
+- **Flexible Scheduling**: Set target days per week for each habit
+- **Completion Statistics**: Detailed analytics for habit performance
+
+### ⏱️ Pomodoro Focus Timer
+- **Customizable Sessions**: Adjust work, short break, and long break durations
+- **Smart Scheduling**: Automatic session type detection
+- **Progress Tracking**: Visual circular progress indicators
+- **Session History**: Track all completed focus sessions
+- **Background Notifications**: Stay informed when sessions complete
+- **Preset Configurations**: Quick setup with pre-defined timer settings
+- **Focus Statistics**: Analyze daily and overall productivity patterns
+
+### 📊 Advanced Analytics & Statistics
+- **Comprehensive Dashboard**: Real-time overview of all productivity metrics
+- **Detailed Statistics**: Task completion rates, habit consistency, focus time
+- **Trend Analysis**: Visual charts showing productivity patterns over time
+- **Performance Insights**: Identify your most productive habits and times
+- **Progress Tracking**: Monitor improvements across different time frames
+- **Data Visualization**: Beautiful charts and graphs for better understanding
+
+### 🚀 Enhanced Productivity Features
+- **Smart Dashboard**: Unified view of tasks, habits, and focus sessions
+- **Quick Actions**: Fast access to common functions and shortcuts
+- **Visual Analytics**: Circular progress indicators and detailed statistics
+- **Smart Filtering**: Advanced filtering across all data types
+- **Export & Import**: Complete data portability in JSON and CSV formats
+- **Persistent Storage**: All data saved locally using UserDefaults
 
 ### 🌟 User Experience
 - **Onboarding Flow**: 4-step introduction to app features
@@ -39,18 +66,28 @@ A beautiful iOS productivity app built with SwiftUI that combines task managemen
 ```
 dafoma_10/
 ├── ColorHarmonyApp.swift          # Main app entry point
-├── ContentView.swift              # Main interface with tab navigation
+├── ContentView.swift              # Main interface with 6-tab navigation
 ├── Models/
 │   ├── ColorTheme.swift          # Color scheme definitions
-│   └── Task.swift                # Task data model
+│   ├── Task.swift                # Task data model
+│   ├── Habit.swift               # Habit tracking model
+│   └── PomodoroSession.swift     # Focus session model
 ├── ViewModels/
 │   ├── ThemeManager.swift        # Theme state management
-│   └── TaskManager.swift         # Task operations and persistence
+│   ├── TaskManager.swift         # Task operations and persistence
+│   ├── HabitManager.swift        # Habit tracking and analytics
+│   └── PomodoroManager.swift     # Focus timer and session tracking
 ├── Views/
 │   ├── OnboardingView.swift      # Multi-step onboarding
 │   ├── AddTaskView.swift         # Task creation interface
+│   ├── AddHabitView.swift        # Habit creation interface
+│   ├── HabitTrackerView.swift    # Habit tracking main view
+│   ├── PomodoroTimerView.swift   # Focus timer interface
+│   ├── PomodoroSettingsView.swift # Timer configuration
+│   ├── StatisticsView.swift      # Advanced analytics dashboard
+│   ├── ExportDataView.swift      # Data export and sharing
 │   ├── ThemeSelectorView.swift   # Theme selection interface
-│   ├── DashboardComponents.swift # Dashboard cards and widgets
+│   ├── DashboardComponents.swift # Enhanced dashboard widgets
 │   └── TaskComponents.swift      # Task list and management
 └── UIComponents/
     ├── CustomButton.swift        # Reusable button component
@@ -121,11 +158,16 @@ dafoma_10/
 ## 📱 Screenshots & Demo
 
 The app features:
-- Animated onboarding with live theme previews
-- Dashboard with progress visualization
-- Task management with priority color coding
-- Theme selector with live previews
-- Smooth transitions and micro-interactions
+- **6-Tab Navigation**: Dashboard, Tasks, Habits, Focus Timer, Statistics, Settings
+- **Animated Onboarding**: Live theme previews and feature introductions
+- **Enhanced Dashboard**: Real-time progress visualization across all features
+- **Task Management**: Priority color coding with advanced filtering
+- **Habit Tracking**: Visual calendar grids and streak counters
+- **Pomodoro Timer**: Circular progress indicators with session management
+- **Advanced Analytics**: Charts, trends, and productivity insights
+- **Data Export**: Complete data portability and backup options
+- **Theme Selector**: Live previews with smooth animations
+- **Smooth Transitions**: Spring-based animations and micro-interactions
 
 ## 🤝 Contributing
 
@@ -135,6 +177,27 @@ This is a demonstration project showcasing SwiftUI best practices and modern iOS
 
 Created as a demonstration of modern iOS app development with SwiftUI.
 
+## 🆕 What's New in Version 2.0
+
+### Major Feature Additions:
+- **🎯 Habit Tracking System**: Complete habit management with visual progress tracking
+- **⏱️ Pomodoro Focus Timer**: Customizable focus sessions with statistics
+- **📊 Advanced Analytics**: Comprehensive statistics and productivity insights
+- **📤 Data Export**: Export your data in JSON or CSV formats
+- **🎨 Enhanced UI**: 6-tab navigation with improved user experience
+
+### Technical Improvements:
+- **Better Architecture**: MVVM pattern with dedicated managers for each feature
+- **Performance Optimized**: Efficient data handling and smooth animations
+- **Expanded Storage**: UserDefaults integration for all new data types
+- **Accessibility Ready**: VoiceOver support and accessibility enhancements
+
+### App Store Readiness:
+- **Unique Value Proposition**: Combines productivity with habit tracking and focus sessions
+- **Substantial New Features**: 3 major new modules with deep functionality
+- **Professional Polish**: Refined animations, interactions, and visual design
+- **User Engagement**: Multiple ways to interact with and benefit from the app
+
 ---
 
-**ColorHarmony: Blink** - Where productivity meets visual beauty ✨ 
+**ColorHarmony: Blink v2.0** - The Ultimate Productivity Companion ✨ 
